@@ -19,7 +19,7 @@ public class UserProfileTest {
     Response response = api.getUserProfile();
 
     response.then()
-        .log().body()
+        .log().ifValidationFails()
         .statusCode(200)
         .body("status", anyOf(equalTo("success"), equalTo("SUCCESS")))
         .body("data.user_id", notNullValue())

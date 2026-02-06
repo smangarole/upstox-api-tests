@@ -16,6 +16,8 @@
     <testng.version>7.10.2</testng.version>
     <restassured.version>5.5.0</restassured.version>
     <slf4j.version>1.7.36</slf4j.version>
+    <allure.version>2.27.0</allure.version>
+    <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
   </properties>
 
   <dependencies>
@@ -50,6 +52,22 @@
       <version>${slf4j.version}</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- Allure TestNG adapter -->
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-testng</artifactId>
+      <version>${allure.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Optional: RestAssured integration for nicer request/response attachments -->
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-rest-assured</artifactId>
+      <version>${allure.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -60,8 +78,16 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.5.2</version>
         <configuration>
+          <systemPropertyVariables>
+            <allure.results.directory>${allure.results.directory}</allure.results.directory>
+          </systemPropertyVariables>
           <useSystemClassLoader>true</useSystemClassLoader>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-maven</artifactId>
+        <version>2.12.0</version>
       </plugin>
     </plugins>
   </build>

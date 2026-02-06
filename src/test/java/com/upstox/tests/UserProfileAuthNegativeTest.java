@@ -15,7 +15,7 @@ public class UserProfileAuthNegativeTest {
 
     api.getUserProfile()
         .then()
-        .log().body()
+        .log().ifValidationFails()
         .statusCode(401)
         .body("status", equalTo("error"))
         .body("errors.size()", greaterThan(0));

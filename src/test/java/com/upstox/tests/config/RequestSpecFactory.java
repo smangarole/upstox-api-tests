@@ -15,6 +15,7 @@ public final class RequestSpecFactory {
         .setAccept(ContentType.JSON)
         .setContentType(ContentType.JSON)
         .addHeader("Authorization", "Bearer " + Config.accessToken())
+        .addFilter(new SafeAllureRestAssuredFilter())
         .log(LogDetail.METHOD)
         .log(LogDetail.URI)
         .build();
@@ -25,6 +26,7 @@ public final class RequestSpecFactory {
         .setBaseUri(Config.baseUrl())
         .setAccept(ContentType.JSON)
         .setContentType(ContentType.JSON)
+        .addFilter(new SafeAllureRestAssuredFilter())
         .log(LogDetail.METHOD)
         .log(LogDetail.URI)
         .build();

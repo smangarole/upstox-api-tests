@@ -12,3 +12,7 @@ target/
 
 # Secrets (extra safety)
 .env
+
+#reports
+allure-results/
+.allure/
