@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Upstox API Suite" verbose="1">
+  <test name="Smoke">
+    <packages>
+      <package name="com.upstox.tests.*"/>
+    </packages>
+  </test>
+</suite>
