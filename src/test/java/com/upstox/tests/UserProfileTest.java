@@ -6,12 +6,17 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import io.qameta.allure.*;
 import static org.hamcrest.Matchers.*;
 
+@Epic("Upstox API")
+@Feature("User")
 public class UserProfileTest {
 
   @Test(groups = {"smoke"})
+  @Story("Fetch user profile")
+  @Severity(SeverityLevel.CRITICAL)
+  @Description("Fetches the authenticated user's profile and validates key fields.")
   public void shouldFetchUserProfile() {
     UpstoxApiClient api =
         new UpstoxApiClient(RequestSpecFactory.authorized());
