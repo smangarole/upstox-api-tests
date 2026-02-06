@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.*;
 @Feature("User")
 public class UserProfileAuthNegativeTest {
 
-  @Test(groups = {"negative"})
+  @Test(groups = {"negative", "smoke"})
   @Story("Unauthorized access is blocked")
   @Severity(SeverityLevel.NORMAL)
   @Description("Calls /user/profile without token and expects 401 with an error payload.")

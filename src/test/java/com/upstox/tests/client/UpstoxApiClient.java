@@ -19,4 +19,19 @@ public class UpstoxApiClient {
     .when()
         .get("/user/profile");
   }
+
+  public Response getHoldings() {
+  return given()
+      .spec(spec)
+  .when()
+      .get("/portfolio/long-term-holdings");
+  }
+
+  public Response getPositions() {
+    return given()
+        .spec(spec)
+    .when()
+        .get("/portfolio/short-term-positions");
+  }
+
 }

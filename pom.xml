@@ -82,6 +82,10 @@
             <allure.results.directory>${allure.results.directory}</allure.results.directory>
           </systemPropertyVariables>
           <useSystemClassLoader>true</useSystemClassLoader>
+          <!-- Parallel execution -->
+          <parallel>methods</parallel>
+          <threadCount>3</threadCount>
+          <perCoreThreadCount>false</perCoreThreadCount>
         </configuration>
       </plugin>
       <plugin>

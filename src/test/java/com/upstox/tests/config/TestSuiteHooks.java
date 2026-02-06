@@ -6,6 +6,7 @@ public class TestSuiteHooks {
 
   @BeforeSuite(alwaysRun = true)
   public void beforeSuite() {
+    TestRunStore.clear();
     AllureEnvironmentWriter.write();
     AllureExecutorWriter.write();
   }

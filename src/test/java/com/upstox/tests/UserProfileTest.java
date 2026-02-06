@@ -13,11 +13,14 @@ import static org.hamcrest.Matchers.*;
 @Feature("User")
 public class UserProfileTest {
 
-  @Test(groups = {"smoke"})
+  @Test(groups = {"profile"})
   @Story("Fetch user profile")
   @Severity(SeverityLevel.CRITICAL)
   @Description("Fetches the authenticated user's profile and validates key fields.")
   public void shouldFetchUserProfile() {
+    System.out.println(
+      "Thread: " + Thread.currentThread().getName()
+    );
     UpstoxApiClient api =
         new UpstoxApiClient(RequestSpecFactory.authorized());
 
